@@ -1,5 +1,18 @@
+//common
+@import "./common/color.scss";
+@import "./common/dimensions.scss";
+
 @import "../../node_modules//modern-normalize/modern-normalize.css";
 
-@import "./App.scss";
+//pages
+@import "./pages/app.scss";
+@import "./pages/main.scss";
 
+//components
 @import "./components/cards.scss";
+@import "./components/header.scss";
+@import "./components/footer.scss";
+@import "./components/card-container.scss";
+@import "./components/titles.scss";
+@import "./components/movie-container.scss";
+@import "./body.scss";
