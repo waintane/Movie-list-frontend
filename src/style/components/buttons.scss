@@ -1,0 +1,13 @@
+.fancy-button {
+  background: linear-gradient($highlight-color);
+  color: white;
+  padding: $basic-button-padding;
+  outline: none;
+  border: none;
+  &:hover {
+    background: -webkit-linear-gradient($highlight-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+  }
+}

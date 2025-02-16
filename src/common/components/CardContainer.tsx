@@ -1,5 +1,5 @@
 import MovieDataProps from "../types/MoviesProps";
-import MovieCard from "./MovieCard";
+import MovieCard from "./movie/MovieCard";
 
 type CardContainerProps = {
   movies: MovieDataProps[];

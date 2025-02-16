@@ -18,10 +18,12 @@ export default function SearchBar({ placeholder }: { placeholder: string }) {
         }}
       >
         <input
+          className="search-bar"
           placeholder={placeholder}
           type="text"
           value={search}
           onChange={(e) => handleSubmit(e.target.value)}
+          onClick={(e) => handleSubmit("")}
         />
       </form>
     </div>

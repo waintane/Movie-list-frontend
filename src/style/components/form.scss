@@ -1,0 +1,10 @@
+.auth-form {
+  margin: 0px auto;
+  width: 60vw;
+  background-color: $third-color;
+  padding: 20px;
+  section {
+    display: grid;
+    grid-template-columns: 0.2fr 1fr;
+  }
+}

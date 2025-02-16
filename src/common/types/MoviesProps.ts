@@ -1,4 +1,4 @@
-type MoviesDataProps = {
+type MoviesProps = {
   createdAt: string | null;
   id: number;
   title: string;
@@ -7,4 +7,4 @@ type MoviesDataProps = {
   image: string;
 };
 
-export default MoviesDataProps;
+export default MoviesProps;

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import MovieDataProps from "../types/MoviesProps";
+import MovieDataProps from "../../types/MoviesProps";
 
 export default function MovieCard(movie: MovieDataProps) {
   return (
@@ -14,7 +14,6 @@ export default function MovieCard(movie: MovieDataProps) {
       >
         <div>
           <h3> {movie.title} </h3>
-          <p> {movie.genre} </p>
         </div>
       </div>
     </Link>

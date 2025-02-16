@@ -1,42 +1,30 @@
 import { useSearchParams } from "react-router-dom";
-import PageLayout from "../common/PageLayout";
+import PageLayout from "../common/layouts/PageLayout";
 import FetchMovie from "../common/db/FetchMovie";
-import processAverageRating from "../common/scripts/processAverageRating";
+import MovieDisplay from "../common/components/movie/MovieDisplay";
+import CommentsContainer from "../common/components/comment/CommentsContainer";
+import MovieProps from "../common/types/MovieProps";
 
 export default function Movie() {
   const [searchParams] = useSearchParams();
   const query = searchParams.get("id");
-  const movieData: any = FetchMovie(query);
+  const movieData: MovieProps | undefined = FetchMovie(query);
+
+  function showContent(movieData: MovieProps | undefined) {
+    if (movieData?.title && movieData !== undefined) {
+      return (
+        <div>
+          <MovieDisplay {...movieData}></MovieDisplay>
+          <CommentsContainer comments={movieData.comments}></CommentsContainer>
+        </div>
+      );
+    }
+    return "En chargement...";
+  }
 
   return (
     <div>
-      <PageLayout>
-        <h1> {movieData ? movieData.title : "Loading..."} </h1>
-        <div className="movie-container">
-          <div className="display-movie">
-            {}
-            <img
-              className="img-movie"
-              src={movieData ? movieData.image : "Loading"}
-              alt=""
-            />
-            <div>
-              <section>
-                <h4>Genre</h4>
-                <p> {movieData ? movieData.genre : ""}</p>
-              </section>
-              <section>
-                <h4>Description</h4>
-                <p> {movieData ? movieData.description : ""}</p>
-              </section>
-              <section>
-                Note moyenne :{" "}
-                {movieData ? processAverageRating(movieData.comments) : ""}
-              </section>
-            </div>
-          </div>
-        </div>
-      </PageLayout>
+      <PageLayout>{showContent(movieData)}</PageLayout>
     </div>
   );
 }

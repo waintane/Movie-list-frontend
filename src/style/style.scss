@@ -9,6 +9,8 @@
 @import "./pages/main.scss";
 
 //components
+@import "./components//input.scss";
+@import "./components/buttons.scss";
 @import "./components/cards.scss";
 @import "./components/header.scss";
 @import "./components/footer.scss";
@@ -16,3 +18,4 @@
 @import "./components/titles.scss";
 @import "./components/movie-container.scss";
 @import "./body.scss";
+@import "./components/form.scss";

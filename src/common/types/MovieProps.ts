@@ -1,13 +1,14 @@
 import Bookmark from "./BookmarkProps";
+import CommentProps from "./CommentProps";
 
-type MoviesDataProps = {
+type MovieProps = {
   createdAt: string | null;
   id: number;
   title: string;
   description: string;
   genre: string;
   image: string;
-  comments: Comment[];
+  comments: CommentProps[];
 };
 
-export default MoviesDataProps;
+export default MovieProps;
